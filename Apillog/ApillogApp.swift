@@ -25,7 +25,8 @@ struct ApillogApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            TodayView()
         }
         .modelContainer(sharedModelContainer)
     }
