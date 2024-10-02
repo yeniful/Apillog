@@ -25,9 +25,9 @@ struct Row: View {
                     VStack(alignment: .leading){
                         Text("콘서타" + " " + "36" + "mg")
                             .font(.title3)
-                            .foregroundColor(.black)
+                            .foregroundColor(.descriptionBlack)
                         Text("아직 복용하지 않음")
-                        .foregroundColor(.gray)}
+                        .foregroundColor(.deactivatedGray)}
                     Spacer()}}
             
             Path { path in
@@ -37,7 +37,7 @@ struct Row: View {
                 path.addLine(to: CGPoint(
                     x: UIScreen.main.bounds.width,
                     y:0))}
-            .stroke(Color.gray, lineWidth: 0.5)}
+            .stroke(Color.dividerGray, lineWidth: 0.5)}
     }
 }
 

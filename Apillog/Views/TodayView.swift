@@ -38,7 +38,8 @@ struct TodayView: View {
                                     updateTime()}}
                         Spacer()
                         Image(systemName: "calendar")
-                            .foregroundStyle(.green)
+                            .foregroundColor(.primaryGreen)
+//                            .foregroundStyle(.green)
                         .frame(width: 32, height: 32)}
                     .padding(.top, 16)
                     
@@ -66,7 +67,8 @@ struct TodayView: View {
                     NSLog("test")}){
                         // Button UI
                         ZStack{
-                            Rectangle().foregroundStyle(.green)
+                            Rectangle()
+                                .foregroundColor(.primaryGreen)
                                 .frame(height: 63)
                             Text("모두 복용하기")
                                 .font(.title2.bold())
