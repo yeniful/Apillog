@@ -14,11 +14,14 @@ extension Color {
     // Neutral Colors
     static let backgroundGray = Color("ApillogGrayBackground")
     static let backgroundWhite = Color("ApillogWhiteBackground")
-    static let dividerGray = Color("ApillogGrayDivider")
     
     // Text Colors
     static let titleBlack = Color("ApillogBlackTitle")
     static let descriptionBlack = Color("ApillogBlackDescription")
     static let activatedGray = Color("ApillogGrayActivated")
     static let deactivatedGray = Color("ApillogGrayDeactivated")
+    
+    // Component Colors
+    static let listDividerGray = Color("ApillogGrayListDivider")
+    static let rowDividerGray = Color("ApillogGrayRowDivider")
 }

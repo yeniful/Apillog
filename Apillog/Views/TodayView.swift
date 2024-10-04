@@ -28,7 +28,7 @@ struct TodayView: View {
             VStack(alignment: .leading, spacing: 0){
                 VStack(alignment: .leading){
                     
-                    // Header
+                    // MARK: Header
                     HStack{
                         Text(currentDate)
                             .font(.title.bold())
@@ -39,12 +39,10 @@ struct TodayView: View {
                         Spacer()
                         Image(systemName: "calendar")
                             .foregroundColor(.primaryGreen)
-//                            .foregroundStyle(.green)
                         .frame(width: 32, height: 32)}
                     .padding(.top, 16)
                     
-                    
-                    // Segmented Control Picker
+                    // MARK: - Segmented Control Picker
                     Picker("", selection: $selectedParts) {
                         ForEach(partsOfTheDay, id: \.self) {
                             Text($0)}}
@@ -52,35 +50,39 @@ struct TodayView: View {
                     .frame(height: 48)
                     .controlSize(.extraLarge)
                     
-                    // Header
+                    // MARK: PrimaryPill
                     Text("아침약").font(.title2.bold())
-                    
                     VStack(spacing: -10){
                         ForEach(tempPillItems, id: \.self) { item in
                             NavigationLink {
                                 // Row Destination
                             } label: {
-                                Row()}}}
+                                Row(isLastRow: tempPillItems.last == item ? true : false)}}}
                 }.padding(.horizontal, 16)
                 
-                Button(action: {
-                    NSLog("test")}){
-                        // Button UI
+                // MARK: 전체 섭취 Button
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        NSLog("test")
+                    }, label: {
                         ZStack{
-                            Rectangle()
-                                .foregroundColor(.primaryGreen)
-                                .frame(height: 63)
-                            Text("모두 복용하기")
-                                .font(.title2.bold())
-                            .foregroundStyle(.white)}}
-                    .padding(.top, -10)
+                            RoundedRectangle(cornerRadius: 30)
+                                .frame(width: 171, height: 60)
+                            Text("모두 섭취하기")
+                                .foregroundStyle(.white)
+                        }
+                    }).apillogButtonStyle()
+                    Spacer()}
                 
-                // 추가약
+                ListDivider()
+                    .padding(.top, 32)
+                
+                // MARK: SecondaryPill
                 VStack(alignment: .leading){
                     Text("추가기록").font(.title2.bold())
-                    Row()}
-                .padding(.horizontal, 16)
-                .padding(.top, 24)
+                    Row(isLastRow: true)}
+                .padding([.horizontal, .top], 16)
                 
                 // MARK: - Default Swift Data
                 NavigationSplitView {

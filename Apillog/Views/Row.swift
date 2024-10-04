@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct Row: View {
+    
+    var isLastRow: Bool
+    
     var body: some View{
         VStack(alignment: .center, spacing: 0){
             // Row
             ZStack{
                 Rectangle()
                     .foregroundColor(.clear)
-                // Row UI 확인용
-//                    .foregroundColor(.blue)
-//                    .opacity(0.2)
                     .frame(height: 80)
                 
                 // Row Content
@@ -30,17 +30,8 @@ struct Row: View {
                         .foregroundColor(.deactivatedGray)}
                     Spacer()}}
             
-            Path { path in
-                path.move(to: CGPoint(
-                    x: 65,
-                    y:0))
-                path.addLine(to: CGPoint(
-                    x: UIScreen.main.bounds.width,
-                    y:0))}
-            .stroke(Color.dividerGray, lineWidth: 0.5)}
+            if !isLastRow {
+                RowDivider()}
+        }
     }
-}
-
-#Preview {
-    Row()
 }
