@@ -52,12 +52,11 @@ struct TodayView: View {
                         HStack{
                             Text("아침약").font(.title2.bold())
                             Spacer()
-                            NavigationLink(destination: PrimaryMedicationView()) {
+                            NavigationLink(destination: PrimaryMedicationView()){
                                 Image("AddingMedicationButton")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 32, height: 32)}
-                        }.padding(.horizontal, 16)
+                                    .frame(width: 32, height: 32)}}
                         
                         VStack(spacing: -10){
                             ForEach(tempPillItems, id: \.self) { item in
@@ -74,9 +73,8 @@ struct TodayView: View {
                                 RoundedRectangle(cornerRadius: 30)
                                     .frame(width: 171, height: 60)
                                 Text("모두 섭취하기")
-                                    .foregroundStyle(.white)
-                            }
-                        }).apillogButtonStyle()
+                                    .foregroundStyle(.white)}})
+                        .apillogButtonStyle()
                         Spacer()}
                     
                     ListDivider()
@@ -84,20 +82,26 @@ struct TodayView: View {
                     
                     // MARK: SecondaryPill
                     VStack(alignment: .leading){
-                        Text("추가기록").font(.title2.bold())
+                        HStack{
+                            Text("추가기록").font(.title2.bold())
+                            Spacer()
+                            // TODO: - SecondaryMedicationView로 수정
+                            NavigationLink(destination: EmptyView()) {
+                                Image("AddingMedicationButton")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 32, height: 32)}}
                         Row(isLastRow: true)}
-                    .padding([.horizontal, .top], 16)
-                    
-                    }}
-        }
-
+                    .padding([.horizontal, .top], 16)}}
+            
+        } // NavigationStack
+        .accentColor(.primaryGreen)
     }
     
     // MARK: - Functions
     private func updateTime() {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
-//        formatter.dateStyle = ""
         formatter.dateFormat = "M월 d일 EEEE"
         currentDate = formatter.string(from: Date())
     }

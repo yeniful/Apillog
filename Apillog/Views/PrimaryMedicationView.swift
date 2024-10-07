@@ -12,23 +12,34 @@ struct PrimaryMedicationView: View {
     
     @Environment(\.modelContext) private var modelContext
     @Query private var primaryMedications: [PrimaryMedication]
+    @State private var selectedMedication: PrimaryMedication?
     
+    // MARK: - DateFormatter
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "M월 d일 EEEE"
+        return formatter
+    }
     
     var body: some View {
         // MARK: - Default Swift Data
-            List {
-                ForEach(primaryMedications) { item in
-                    NavigationLink {
-                        Text(item.name)
-                    }
-                    label: {
-//                        Text(item.durationStartDate, format: Date.FormatStyle(
-//                            date: .numeric,
-//                            time: .standard))
-                        Text(item.id.uuidString)
-                    }
+        List {
+            ForEach(primaryMedications) { item in
+                Button(item.name) {
+                    selectedMedication = item}
+            }
+            .onDelete(perform: deleteMedication)
+            .sheet(item: $selectedMedication) { item in
+                VStack {
+                    Text(item.name)
+                        .font(.title)
+                    Text("Strength: \(item.strength)\(item.unit)")
+                    Text("Cycle: \(item.cycle) days")
+                    Text("복용 시작: \(item.durationStartDate, formatter: dateFormatter)")
+                    Text("복용 끝: \(item.durationEndDate, formatter: dateFormatter)")
                 }
-                .onDelete(perform: deleteMedication)}
+                .padding()}}
 #if os(macOS)
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
 #endif
@@ -39,7 +50,8 @@ struct PrimaryMedicationView: View {
 #endif
                 ToolbarItem {
                     Button(action: addMedication) {
-                        Label("Add Item", systemImage: "plus")}}}}
+                        Label("Add Item", systemImage: "plus")}}}
+    }
     
     // MARK: - Default Swift Data Functions
     private func addMedication() {
@@ -59,8 +71,5 @@ struct PrimaryMedicationView: View {
             for index in offsets {
                 modelContext.delete(primaryMedications[index])}}
     }
-}
-
-#Preview {
-    PrimaryMedicationView()
+    
 }

@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class PrimaryMedication {
+final class PrimaryMedication: Identifiable {
     var id: UUID
     var name: String
     var strength: Int
