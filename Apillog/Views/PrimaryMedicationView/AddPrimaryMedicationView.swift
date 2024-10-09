@@ -17,6 +17,7 @@ struct AddPrimaryMedicationView: View {
     @State var cycle: Int = 0
     @State var durationStartDate: Date?
     @State var durationEndDate: Date?
+    @State var isNameEditable: Bool = false
     
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -29,8 +30,24 @@ struct AddPrimaryMedicationView: View {
         NavigationView{
             VStack(alignment: .leading){
                 Text("약 이름")
-                TextField("약 이름을 입력해주세요", text: $medicationName).disableAutocorrection(true)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Picker("약을 골라주세요.", selection: $medicationName){
+                    ForEach(["콘서타", "메디키넷", "직접 입력"], id: \.self){ name in
+                        Text(name)
+                    }
+                }.pickerStyle(.segmented)
+                    .onChange(of: medicationName) { oldName, newName in
+                        isNameEditable = (medicationName != "콘서타" && medicationName != "메디키넷")
+                        print(oldName, newName)
+                        if isNameEditable {
+                            medicationName = newName
+                        }
+                    }
+                if isNameEditable {
+                    TextField("약 이름을 입력해주세요", text: $medicationName).disableAutocorrection(true)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                
                 Text("용량")
                 HStack{
                     TextField("약 용량을 입력해주세요", value: $strength, formatter: formatter).disableAutocorrection(true)

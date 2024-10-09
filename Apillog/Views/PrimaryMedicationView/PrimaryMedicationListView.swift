@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct PrimaryMedicationView: View {
+struct PrimaryMedicationListView: View {
     
     @Environment(\.modelContext) private var modelContext
     @Query private var primaryMedications: [PrimaryMedication]
@@ -27,13 +27,15 @@ struct PrimaryMedicationView: View {
     var body: some View {
         // MARK: - Default Swift Data
         List {
-                ForEach(primaryMedications, id: \.id) { item in
-                        Button(item.name) {
-                            selectedMedication = item
-                            item.isArchived.toggle()
-                            isPresenting = item.isArchived}
+            ForEach(primaryMedications, id: \.id) { item in
+                
+                Button(action: {
+                    selectedMedication = item
+                }, label: {
+                    PrimaryMedicationRow(medication: item)
+                })
             }
-            .onDelete(perform: deleteMedication)
+//            .onDelete(perform: deleteMedication)
             .sheet(item: $selectedMedication) { item in
                 VStack {
                     Text(item.name)

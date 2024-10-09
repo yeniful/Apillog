@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Row: View {
+struct TodayViewListRow: View {
     
     var isLastRow: Bool
     

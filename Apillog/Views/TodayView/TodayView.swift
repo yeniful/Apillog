@@ -52,7 +52,7 @@ struct TodayView: View {
                         HStack{
                             Text("아침약").font(.title2.bold())
                             Spacer()
-                            NavigationLink(destination: PrimaryMedicationView(isPresenting: false, isPresentedAddPrimaryMedicationView: false)){
+                            NavigationLink(destination: PrimaryMedicationListView(isPresenting: false, isPresentedAddPrimaryMedicationView: false)){
                                 Image("AddingMedicationButton")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -60,7 +60,7 @@ struct TodayView: View {
                         
                         VStack(spacing: -10){
                             ForEach(tempPillItems, id: \.self) { item in
-                                    Row(isLastRow: tempPillItems.last == item ? true : false)}}}
+                                    TodayViewListRow(isLastRow: tempPillItems.last == item ? true : false)}}}
                     .padding(.horizontal, 16)
                     
                     // MARK: 전체 섭취 Button
@@ -91,7 +91,7 @@ struct TodayView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 32, height: 32)}}
-                        Row(isLastRow: true)}
+                        TodayViewListRow(isLastRow: true)}
                     .padding([.horizontal, .top], 16)}}
             
         } // NavigationStack
