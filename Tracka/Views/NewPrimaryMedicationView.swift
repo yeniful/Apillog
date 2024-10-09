@@ -27,8 +27,7 @@ struct NewPrimaryMedicationView: View {
         List {
             ForEach(primaryMedications) { item in
                 Button(item.name) {
-                    selectedMedication = item}
-            }
+                    selectedMedication = item}}
             .onDelete(perform: deleteMedication)
             .sheet(item: $selectedMedication) { item in
                 VStack {
@@ -36,8 +35,8 @@ struct NewPrimaryMedicationView: View {
                         .font(.title)
                     Text("Strength: \(item.strength)\(item.unit)")
                     Text("Cycle: \(item.cycle) days")
-                    Text("복용 시작: \(item.durationStartDate, formatter: dateFormatter)")
-                    Text("복용 끝: \(item.durationEndDate, formatter: dateFormatter)")
+                    Text("복용 시작: \(dateFormatter.string(from: item.durationStartDate))")
+                    Text("복용 끝: \(dateFormatter.string(from: item.durationEndDate))")
                 }
                 .padding()}}
 #if os(macOS)
