@@ -52,7 +52,7 @@ struct TodayView: View {
                         HStack{
                             Text("아침약").font(.title2.bold())
                             Spacer()
-                            NavigationLink(destination: PrimaryMedicationView()){
+                            NavigationLink(destination: PrimaryMedicationView(isPresenting: false, isPresentedAddPrimaryMedicationView: false)){
                                 Image("AddingMedicationButton")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
