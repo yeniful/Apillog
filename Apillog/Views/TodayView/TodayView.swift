@@ -13,13 +13,14 @@ struct TodayView: View {
     @Environment(\.modelContext) private var modelContext
     
     private var medications: [PrimaryMedication] {
-        if selectedPart == "아침" {
+        switch selectedPart{
+        case "아침":
             return morningMedications
-        } else if selectedPart == "점심" {
+        case "점심":
             return lunchMedications
-        } else if selectedPart == "저녁" {
-            return dinnerMedication
-        } else {
+        case "저녁":
+            return dinnerMedications
+        default:
             return allyMedications
         }
     }
@@ -35,7 +36,7 @@ struct TodayView: View {
     }) var lunchMedications: [PrimaryMedication]
     @Query(filter: #Predicate<PrimaryMedication> { medication in
         medication.cycle >= 4 && medication.isActive == true
-    }) var dinnerMedication: [PrimaryMedication]
+    }) var dinnerMedications: [PrimaryMedication]
     
     // Header
     @State private var currentDate = ""
@@ -51,13 +52,6 @@ struct TodayView: View {
                         
                         // MARK: Header
                         HStack{
-                            Button("Data 확인"){
-                                print("아침: \(morningMedications.count)")
-                                print("점심: \(lunchMedications.count)")
-                                print("저녁: \(dinnerMedication.count)")
-                                print("전체: \(medications.count)")
-                                print("==============================")
-                            }
                             Text(currentDate)
                                 .font(.title.bold())
                                 .onAppear {
@@ -85,7 +79,7 @@ struct TodayView: View {
                             Text(selectedPart + "약").font(.title2.bold())
                             Spacer()
                             
-                            // Button To AddingMedicationView
+                            // MARK: - Button To AddingMedicationView
                             NavigationLink(destination: PrimaryMedicationListView(isPresenting: false, isPresentedAddPrimaryMedicationView: false)){
                                 Image("AddingMedicationButton")
                                     .resizable()
@@ -147,18 +141,19 @@ struct TodayView: View {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = "HH"
-//        let hour = Int(formatter.string(from: Date()))!
         guard let hour = Int(formatter.string(from: Date())) else {
                 return "Error"
-            }
-        
-        if hour < 12 {
-            return "아침"
-        } else if hour < 18 {
-            return "점심"
-        } else if hour < 24 {
-            return "저녁"
         }
-        return "Error"
+        
+        switch hour {
+        case 0..<12:
+            return "아침"
+        case 12..<18:
+            return "점심"
+        case 18..<24:
+            return "저녁"
+        default:
+            return "전체"
+        }
     }
 }
