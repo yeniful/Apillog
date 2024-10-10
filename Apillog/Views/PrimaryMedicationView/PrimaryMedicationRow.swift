@@ -9,9 +9,9 @@ import SwiftUI
 
 struct PrimaryMedicationRow: View {
     
-//    @Environment(\.modelContext) private var modelContext
-    @State var isActive: Bool = false
+    @Environment(\.modelContext) private var modelContext
     var medication: PrimaryMedication
+    @State var isActive: Bool
     
     var body: some View {
         HStack{
@@ -26,9 +26,12 @@ struct PrimaryMedicationRow: View {
             
             Spacer()
             
-            Toggle(isOn: $isActive, label: {
+            Toggle(isOn: $isActive, label:{
                 
-            })
+            }).onChange(of: isActive) { oldValue, newValue in
+                isActive = newValue
+                medication.isActive = newValue
+            }
         }
     }
 }

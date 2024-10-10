@@ -10,18 +10,38 @@ import SwiftData
 
 struct TodayView: View {
     
-    private var tempPillItems = [1, 2, 3]
     @Environment(\.modelContext) private var modelContext
-    @Query private var primaryMedications: [PrimaryMedication]
+    
+    private var medications: [PrimaryMedication] {
+        if selectedPart == "아침" {
+            return morningMedications
+        } else if selectedPart == "점심" {
+            return lunchMedications
+        } else if selectedPart == "저녁" {
+            return dinnerMedication
+        } else {
+            return allyMedications
+        }
+    }
+    
+    @Query(filter: #Predicate<PrimaryMedication> { medication in
+        medication.isActive == true
+    }) var allyMedications: [PrimaryMedication]
+    @Query(filter: #Predicate<PrimaryMedication> { medication in
+        medication.cycle != 2 && medication.cycle != 4 && medication.cycle != 6 && medication.isActive == true
+    }) var morningMedications: [PrimaryMedication]
+    @Query(filter: #Predicate<PrimaryMedication> { medication in
+        medication.cycle != 1 && medication.cycle != 4 && medication.cycle != 5 && medication.isActive == true
+    }) var lunchMedications: [PrimaryMedication]
+    @Query(filter: #Predicate<PrimaryMedication> { medication in
+        medication.cycle >= 4 && medication.isActive == true
+    }) var dinnerMedication: [PrimaryMedication]
     
     // Header
     @State private var currentDate = ""
-    
     // Segmented Picker
-    @State var selectedParts = "전체"
-    var partsOfTheDay = ["전체", "아침", "점심", "저녁"]
-    
-    @State private var selectedSegment = 0
+    @State var selectedPart: String = ""
+    var partsOfTheDay = ["아침", "점심", "저녁", "전체"]
     
     var body: some View {
         NavigationStack {
@@ -31,12 +51,21 @@ struct TodayView: View {
                         
                         // MARK: Header
                         HStack{
+                            Button("Data 확인"){
+                                print("아침: \(morningMedications.count)")
+                                print("점심: \(lunchMedications.count)")
+                                print("저녁: \(dinnerMedication.count)")
+                                print("전체: \(medications.count)")
+                                print("==============================")
+                            }
                             Text(currentDate)
                                 .font(.title.bold())
                                 .onAppear {
+                                    selectedPart = getPartOfTheDay()
                                     updateTime()
                                     Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) {_ in
-                                        updateTime()}}
+                                        updateTime()
+                                    }}
                             Spacer()
                             Image(systemName: "calendar")
                                 .foregroundColor(.primaryGreen)
@@ -44,7 +73,7 @@ struct TodayView: View {
                         .padding(.top, 16)
                         
                         // MARK: - Segmented Control Picker
-                        Picker("", selection: $selectedParts) {
+                        Picker("", selection: $selectedPart) {
                             ForEach(partsOfTheDay, id: \.self) {
                                 Text($0)}}
                         .pickerStyle(SegmentedPickerStyle())
@@ -53,21 +82,21 @@ struct TodayView: View {
                         
                         // MARK: PrimaryPill
                         HStack{
-                            Text("아침약").font(.title2.bold())
+                            Text(selectedPart + "약").font(.title2.bold())
                             Spacer()
+                            
+                            // Button To AddingMedicationView
                             NavigationLink(destination: PrimaryMedicationListView(isPresenting: false, isPresentedAddPrimaryMedicationView: false)){
                                 Image("AddingMedicationButton")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 32, height: 32)}}
+                                .frame(width: 32, height: 32)}}
                         
                         VStack(spacing: -10){
-                            
-                            ForEach(primaryMedications , id: \.self) { medication in
-                                TodayViewListRow(medication: medication, isLastRow: primaryMedications.last == medication ? true : false)}
-                            
-                        }}
-                    .padding(.horizontal, 16)
+                            ForEach(medications , id: \.self) { medication in
+                                TodayViewListRow(medication: medication, isLastRow: medications.last == medication ? true : false)}}
+                        
+                    }.padding(.horizontal, 16)
                     
                     // MARK: 전체 섭취 Button
                     HStack{
@@ -112,5 +141,24 @@ struct TodayView: View {
         formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = "M월 d일 EEEE"
         currentDate = formatter.string(from: Date())
+    }
+    
+    private func getPartOfTheDay() -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "HH"
+//        let hour = Int(formatter.string(from: Date()))!
+        guard let hour = Int(formatter.string(from: Date())) else {
+                return "Error"
+            }
+        
+        if hour < 12 {
+            return "아침"
+        } else if hour < 18 {
+            return "점심"
+        } else if hour < 24 {
+            return "저녁"
+        }
+        return "Error"
     }
 }
