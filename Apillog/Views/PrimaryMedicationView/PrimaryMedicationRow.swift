@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PrimaryMedicationRow: View {
     
-    @Environment(\.modelContext) private var modelContext
+//    @Environment(\.modelContext) private var modelContext
     @State var isActive: Bool = false
     var medication: PrimaryMedication
     

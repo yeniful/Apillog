@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TodayViewListRow: View {
     
+    @State var medication: PrimaryMedication
     var isLastRow: Bool
     
     var body: some View{
@@ -23,7 +24,7 @@ struct TodayViewListRow: View {
                 HStack(alignment: .center){
                     Image("PillGreen")
                     VStack(alignment: .leading){
-                        Text("콘서타" + " " + "36" + "mg")
+                        Text(medication.name + " " + "\(medication.strength)" + medication.unit)
                             .font(.title3)
                             .foregroundColor(.descriptionBlack)
                         Text("아직 복용하지 않음")

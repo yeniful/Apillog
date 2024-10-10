@@ -9,7 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct TodayView: View {
+    
     private var tempPillItems = [1, 2, 3]
+    @Environment(\.modelContext) private var modelContext
+    @Query private var primaryMedications: [PrimaryMedication]
     
     // Header
     @State private var currentDate = ""
@@ -59,8 +62,11 @@ struct TodayView: View {
                                     .frame(width: 32, height: 32)}}
                         
                         VStack(spacing: -10){
-                            ForEach(tempPillItems, id: \.self) { item in
-                                    TodayViewListRow(isLastRow: tempPillItems.last == item ? true : false)}}}
+                            
+                            ForEach(primaryMedications , id: \.self) { medication in
+                                TodayViewListRow(medication: medication, isLastRow: primaryMedications.last == medication ? true : false)}
+                            
+                        }}
                     .padding(.horizontal, 16)
                     
                     // MARK: 전체 섭취 Button
@@ -90,8 +96,10 @@ struct TodayView: View {
                                 Image("AddingMedicationButton")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 32, height: 32)}}
-                        TodayViewListRow(isLastRow: true)}
+                                .frame(width: 32, height: 32)}}
+                        // TODO: Secondary Medication List
+//                        TodayViewListRow(medication: <#T##PrimaryMedication#>, isLastRow: <#T##Bool#>)
+                    }
                     .padding([.horizontal, .top], 16)}}
             
         } // NavigationStack
