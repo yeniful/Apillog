@@ -1,13 +1,13 @@
 //
-//  ApillogUITestsLaunchTests.swift
-//  ApillogUITests
+//  TrackaUITestsLaunchTests.swift
+//  TrackaUITests
 //
 //  Created by yeni on 9/25/24.
 //
 
 import XCTest
 
-final class ApillogUITestsLaunchTests: XCTestCase {
+final class TrackaUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

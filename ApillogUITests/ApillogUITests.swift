@@ -1,13 +1,13 @@
 //
-//  ApillogUITests.swift
-//  ApillogUITests
+//  TrackaUITests.swift
+//  TrackaUITests
 //
 //  Created by yeni on 9/25/24.
 //
 
 import XCTest
 
-final class ApillogUITests: XCTestCase {
+final class TrackaUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

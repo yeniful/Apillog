@@ -1,6 +1,6 @@
 //
 //  TodayView.swift
-//  Apillog
+//  Tracka
 //
 //  Created by yeni on 9/27/24.
 //
@@ -76,7 +76,7 @@ struct TodayView: View {
                                 Text("모두 섭취하기")
                                     .foregroundStyle(.white)
                             }
-                        }).apillogButtonStyle()
+                        }).trackaButtonStyle()
                         Spacer()}
                     
                     ListDivider()

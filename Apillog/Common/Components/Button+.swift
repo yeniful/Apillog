@@ -1,6 +1,6 @@
 //
 //  Button+.swift
-//  Apillog
+//  Tracka
 //
 //  Created by yeni on 10/4/24.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Button {
     
-    func apillogButtonStyle() -> some View { self
+    func trackaButtonStyle() -> some View { self
         .foregroundColor(Color.primaryGreen)
         .cornerRadius(30)
         .font(.title2.bold())

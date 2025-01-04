@@ -1,6 +1,6 @@
 //
-//  ApillogApp.swift
-//  Apillog
+//  TrackaApp.swift
+//  Tracka
 //
 //  Created by yeni on 9/25/24.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct ApillogApp: App {
+struct TrackaApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             PrimaryMedication.self,

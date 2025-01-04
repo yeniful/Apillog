@@ -1,6 +1,6 @@
 //
-//  ApillogDivider.swift
-//  Apillog
+//  TrackaDivider.swift
+//  Tracka
 //
 //  Created by yeni on 10/4/24.
 //
