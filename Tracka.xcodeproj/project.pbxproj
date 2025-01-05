@@ -30,19 +30,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		79BA661E2CA3A21E002FFE3C /* Apillog */ = {
+		79BA661E2CA3A21E002FFE3C /* Tracka */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Apillog;
+			path = Tracka;
 			sourceTree = "<group>";
 		};
-		79BA66322CA3A220002FFE3C /* ApillogTests */ = {
+		79BA66322CA3A220002FFE3C /* TrackaTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ApillogTests;
+			path = TrackaTests;
 			sourceTree = "<group>";
 		};
-		79BA663C2CA3A220002FFE3C /* ApillogUITests */ = {
+		79BA663C2CA3A220002FFE3C /* TrackaUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ApillogUITests;
+			path = TrackaUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		79BA66132CA3A21E002FFE3C = {
 			isa = PBXGroup;
 			children = (
-				79BA661E2CA3A21E002FFE3C /* Apillog */,
-				79BA66322CA3A220002FFE3C /* ApillogTests */,
-				79BA663C2CA3A220002FFE3C /* ApillogUITests */,
+				79BA661E2CA3A21E002FFE3C /* Tracka */,
+				79BA66322CA3A220002FFE3C /* TrackaTests */,
+				79BA663C2CA3A220002FFE3C /* TrackaUITests */,
 				79BA661D2CA3A21E002FFE3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				79BA661E2CA3A21E002FFE3C /* Apillog */,
+				79BA661E2CA3A21E002FFE3C /* Tracka */,
 			);
 			name = Tracka;
 			packageProductDependencies = (
@@ -131,7 +131,7 @@
 				79BA66312CA3A220002FFE3C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				79BA66322CA3A220002FFE3C /* ApillogTests */,
+				79BA66322CA3A220002FFE3C /* TrackaTests */,
 			);
 			name = TrackaTests;
 			packageProductDependencies = (
@@ -154,7 +154,7 @@
 				79BA663B2CA3A220002FFE3C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				79BA663C2CA3A220002FFE3C /* ApillogUITests */,
+				79BA663C2CA3A220002FFE3C /* TrackaUITests */,
 			);
 			name = TrackaUITests;
 			packageProductDependencies = (
@@ -390,11 +390,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Apillog/Apillog.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Tracka/Tracka.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Apillog/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Tracka/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -431,11 +431,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Apillog/Apillog.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Tracka/Tracka.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Apillog/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Tracka/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -479,7 +479,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.ApillogTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.TrackaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -503,7 +503,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.ApillogTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.TrackaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -526,14 +526,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.ApillogUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.TrackaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = Apillog;
+				TEST_TARGET_NAME = Tracka;
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -549,14 +549,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.ApillogUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.TrackaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = Apillog;
+				TEST_TARGET_NAME = Tracka;
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
