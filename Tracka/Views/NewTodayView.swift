@@ -9,7 +9,11 @@ import SwiftUI
 import SwiftData
 
 struct NewTodayView: View {
-    private var tempPillItems = [1, 2, 3]
+    private var tempPillItems = [
+        PrimaryMedication(name: "A", strength: 36, unit: "mg", cycle: 1, durationStartDate: Date(), durationEndDate: Date()),
+        PrimaryMedication(name: "B", strength: 36, unit: "mg", cycle: 1, durationStartDate: Date(), durationEndDate: Date()),
+        PrimaryMedication(name: "C", strength: 36, unit: "mg", cycle: 1, durationStartDate: Date(), durationEndDate: Date())
+    ]
     
     // Header
     @State private var currentDate = ""
@@ -59,8 +63,7 @@ struct NewTodayView: View {
                                     .aspectRatio(contentMode: .fit)
                                 .frame(width: 32, height: 32)}
                         }.padding(.horizontal, 16)
-                        
-                        VStack(spacing: -10){
+               VStack(spacing: -10){
                             ForEach(tempPillItems, id: \.self) { item in
 //                                TodayViewListRow(isLastRow: tempPillItems.last == item ? true : false)
                             }
@@ -88,21 +91,30 @@ struct NewTodayView: View {
                     
                     // MARK: SecondaryPill
                     VStack(alignment: .leading){
-                        Text("추가기록").font(.title2.bold())
-                        //                        TodayViewListRow(medication: <#PrimaryMedication#>, isLastRow: true)
+                        HStack{
+                            Text("추가기록").font(.title2.bold())
+                            ForEach(tempPillItems, id: \.self) { item in
+                                TodayViewListRow(medication: item, isLastRow: true)
+                            }
+                            Spacer()
+                            // TODO: - SecondaryMedicationView로 수정
+                            NavigationLink(destination: EmptyView()) {
+                                Image("AddingMedicationButton")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                .frame(width: 32, height: 32)}}
+//                        Row(isLastRow: true)
                     }
-                    .padding([.horizontal, .top], 16)
-                    
-                    }}
-        }
-
+                    .padding([.horizontal, .top], 16)}}
+            
+        } // NavigationStack
+        .accentColor(.primaryGreen)
     }
     
     // MARK: - Functions
     private func updateTime() {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
-//        formatter.dateStyle = ""
         formatter.dateFormat = "M월 d일 EEEE"
         currentDate = formatter.string(from: Date())
     }
