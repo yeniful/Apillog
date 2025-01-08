@@ -7,29 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A86A36B82D2E6E7700388942 /* TrackaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36B62D2E6E7700388942 /* TrackaTests.swift */; };
-		A86A36B92D2E6E7700388942 /* TrackaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36B62D2E6E7700388942 /* TrackaTests.swift */; };
-		A86A36BD2D2E6E8500388942 /* TrackaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36BB2D2E6E8500388942 /* TrackaUITestsLaunchTests.swift */; };
-		A86A36BE2D2E6E8500388942 /* TrackaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36BA2D2E6E8500388942 /* TrackaUITests.swift */; };
 		A86A36BF2D2E6E8500388942 /* TrackaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36BB2D2E6E8500388942 /* TrackaUITestsLaunchTests.swift */; };
 		A86A36C02D2E6E8500388942 /* TrackaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36BA2D2E6E8500388942 /* TrackaUITests.swift */; };
 		A86A36DB2D2E6EC500388942 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86A36C82D2E6EC500388942 /* Preview Assets.xcassets */; };
 		A86A36DC2D2E6EC500388942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86A36D62D2E6EC500388942 /* Assets.xcassets */; };
-		A86A36DD2D2E6EC500388942 /* ListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36C22D2E6EC500388942 /* ListDivider.swift */; };
 		A86A36DE2D2E6EC500388942 /* PrimaryMedication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36D72D2E6EC500388942 /* PrimaryMedication.swift */; };
 		A86A36E02D2E6EC500388942 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36CE2D2E6EC500388942 /* TodayView.swift */; };
-		A86A36E12D2E6EC500388942 /* RowDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36C32D2E6EC500388942 /* RowDivider.swift */; };
 		A86A36E22D2E6EC500388942 /* TrackaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36D92D2E6EC500388942 /* TrackaApp.swift */; };
 		A86A36E32D2E6EC500388942 /* Button+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36C12D2E6EC500388942 /* Button+.swift */; };
 		A86A36E42D2E6EC500388942 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36C62D2E6EC500388942 /* Cycle.swift */; };
 		A86A36E52D2E6EC500388942 /* PrimaryMedicationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36CB2D2E6EC500388942 /* PrimaryMedicationListView.swift */; };
-		A86A36E62D2E6EC500388942 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36D32D2E6EC500388942 /* Row.swift */; };
 		A86A36E72D2E6EC500388942 /* PrimaryMedicationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36CC2D2E6EC500388942 /* PrimaryMedicationRow.swift */; };
 		A86A36E82D2E6EC500388942 /* NewTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36D12D2E6EC500388942 /* NewTodayView.swift */; };
 		A86A36E92D2E6EC500388942 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36C52D2E6EC500388942 /* Color+.swift */; };
 		A86A36EA2D2E6EC500388942 /* TodayViewListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36CF2D2E6EC500388942 /* TodayViewListRow.swift */; };
 		A86A36EB2D2E6EC500388942 /* NewPrimaryMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36D22D2E6EC500388942 /* NewPrimaryMedicationView.swift */; };
 		A86A36EC2D2E6EC500388942 /* AddPrimaryMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36CA2D2E6EC500388942 /* AddPrimaryMedicationView.swift */; };
+		A86A36ED2D2E713E00388942 /* TrackaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36B62D2E6E7700388942 /* TrackaTests.swift */; };
+		A86A37172D2E88A200388942 /* Testing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A86A36EF2D2E737B00388942 /* Testing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A86A37192D2E8A3600388942 /* RowDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36C32D2E6EC500388942 /* RowDivider.swift */; };
+		A86A371A2D2E8A3D00388942 /* ListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36C22D2E6EC500388942 /* ListDivider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +45,20 @@
 			remoteInfo = Apillog;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A86A37182D2E88A200388942 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A86A37172D2E88A200388942 /* Testing.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		79BA661C2CA3A21E002FFE3C /* Tracka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracka.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,11 +80,11 @@
 		A86A36CF2D2E6EC500388942 /* TodayViewListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewListRow.swift; sourceTree = "<group>"; };
 		A86A36D12D2E6EC500388942 /* NewTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodayView.swift; sourceTree = "<group>"; };
 		A86A36D22D2E6EC500388942 /* NewPrimaryMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPrimaryMedicationView.swift; sourceTree = "<group>"; };
-		A86A36D32D2E6EC500388942 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		A86A36D62D2E6EC500388942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A86A36D72D2E6EC500388942 /* PrimaryMedication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryMedication.swift; sourceTree = "<group>"; };
 		A86A36D82D2E6EC500388942 /* Tracka.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tracka.entitlements; sourceTree = "<group>"; };
 		A86A36D92D2E6EC500388942 /* TrackaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackaApp.swift; sourceTree = "<group>"; };
+		A86A36EF2D2E737B00388942 /* Testing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Testing.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/Testing.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +119,7 @@
 				A86A36B72D2E6E7700388942 /* TrackaTests */,
 				A86A36BC2D2E6E8500388942 /* TrackaUITests */,
 				A86A36DA2D2E6EC500388942 /* Tracka */,
+				A86A36EE2D2E737400388942 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,7 +204,6 @@
 				A86A36D02D2E6EC500388942 /* TodayView */,
 				A86A36D12D2E6EC500388942 /* NewTodayView.swift */,
 				A86A36D22D2E6EC500388942 /* NewPrimaryMedicationView.swift */,
-				A86A36D32D2E6EC500388942 /* Row.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +222,14 @@
 			path = Tracka;
 			sourceTree = "<group>";
 		};
+		A86A36EE2D2E737400388942 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A86A36EF2D2E737B00388942 /* Testing.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,6 +240,7 @@
 				79BA66182CA3A21E002FFE3C /* Sources */,
 				79BA66192CA3A21E002FFE3C /* Frameworks */,
 				79BA661A2CA3A21E002FFE3C /* Resources */,
+				A86A37182D2E88A200388942 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,22 +368,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A86A36BD2D2E6E8500388942 /* TrackaUITestsLaunchTests.swift in Sources */,
-				A86A36BE2D2E6E8500388942 /* TrackaUITests.swift in Sources */,
-				A86A36B82D2E6E7700388942 /* TrackaTests.swift in Sources */,
-				A86A36DD2D2E6EC500388942 /* ListDivider.swift in Sources */,
 				A86A36DE2D2E6EC500388942 /* PrimaryMedication.swift in Sources */,
 				A86A36E02D2E6EC500388942 /* TodayView.swift in Sources */,
-				A86A36E12D2E6EC500388942 /* RowDivider.swift in Sources */,
 				A86A36E22D2E6EC500388942 /* TrackaApp.swift in Sources */,
+				A86A37192D2E8A3600388942 /* RowDivider.swift in Sources */,
 				A86A36E32D2E6EC500388942 /* Button+.swift in Sources */,
 				A86A36E42D2E6EC500388942 /* Cycle.swift in Sources */,
 				A86A36E52D2E6EC500388942 /* PrimaryMedicationListView.swift in Sources */,
-				A86A36E62D2E6EC500388942 /* Row.swift in Sources */,
 				A86A36E72D2E6EC500388942 /* PrimaryMedicationRow.swift in Sources */,
 				A86A36E82D2E6EC500388942 /* NewTodayView.swift in Sources */,
 				A86A36E92D2E6EC500388942 /* Color+.swift in Sources */,
 				A86A36EA2D2E6EC500388942 /* TodayViewListRow.swift in Sources */,
+				A86A371A2D2E8A3D00388942 /* ListDivider.swift in Sources */,
 				A86A36EB2D2E6EC500388942 /* NewPrimaryMedicationView.swift in Sources */,
 				A86A36EC2D2E6EC500388942 /* AddPrimaryMedicationView.swift in Sources */,
 			);
@@ -373,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A86A36ED2D2E713E00388942 /* TrackaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +397,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A86A36B92D2E6E7700388942 /* TrackaTests.swift in Sources */,
 				A86A36BF2D2E6E8500388942 /* TrackaUITestsLaunchTests.swift in Sources */,
 				A86A36C02D2E6E8500388942 /* TrackaUITests.swift in Sources */,
 			);
@@ -525,14 +541,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Apillog/Apillog.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = Tracka/Tracka.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Apillog/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_ASSET_PATHS = "\"Tracka/Preview Content\"";
+				DEVELOPMENT_TEAM = 22A6RK2943;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -566,14 +584,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Apillog/Apillog.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = Tracka/Tracka.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Apillog/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_ASSET_PATHS = "\"Tracka/Preview Content\"";
+				DEVELOPMENT_TEAM = 22A6RK2943;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -614,7 +634,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.ApillogTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.TrackaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -638,7 +658,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.ApillogTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.TrackaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -661,14 +681,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.ApillogUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.TrackaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = Apillog;
+				TEST_TARGET_NAME = Tracka;
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -684,14 +704,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.ApillogUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.yeniful.TrackaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = Apillog;
+				TEST_TARGET_NAME = Tracka;
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;

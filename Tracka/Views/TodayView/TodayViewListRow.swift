@@ -32,7 +32,8 @@ struct TodayViewListRow: View {
                     Spacer()}}
             
             if !isLastRow {
-                RowDivider()}
+                RowDivider()
+            }
         }
     }
 }

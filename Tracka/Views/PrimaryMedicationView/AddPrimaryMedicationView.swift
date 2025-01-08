@@ -85,7 +85,8 @@ struct AddPrimaryMedicationView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("취소") {
                         isPresented = false }
-                    .foregroundStyle(.apillogGreen)}
+//                    .foregroundStyle(.apillogGreen)
+                }
 #endif
                 ToolbarItem {
                     Button("저장") {
@@ -97,7 +98,8 @@ struct AddPrimaryMedicationView: View {
                             durationEndDate: durationEndDate)
                         
                         isPresented = false }
-                    .foregroundStyle(.apillogGreen)}
+//                    .foregroundStyle(.apillogGreen)
+                }
             }
         }.padding([.horizontal, .top], 16)
     }
