@@ -103,7 +103,7 @@ struct TodayView: View {
                                     .frame(width: 171, height: 60)
                                 Text("모두 섭취하기")
                                     .foregroundStyle(.white)}})
-                        .apillogButtonStyle()
+//                        .apillogButtonStyle()
                         Spacer()}
                     
                     ListDivider()

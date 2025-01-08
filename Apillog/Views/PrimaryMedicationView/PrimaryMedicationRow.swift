@@ -17,11 +17,13 @@ struct PrimaryMedicationRow: View {
         HStack{
             VStack(alignment: .leading){
                 if let cycle = Cycle(rawValue: medication.cycle) {
-                    Text("\(cycle.description)").foregroundStyle(.apillogGrayActivated)
+                    Text("\(cycle.description)").foregroundStyle(.gray)
                 } else {
-                    Text("Error").foregroundStyle(.apillogGrayActivated)
+                    Text("Error")
+//                        .foregroundStyle(.apillogGrayActivated)
                 }
-                Text(medication.name).foregroundStyle(.apillogBlackDescription)
+                Text(medication.name)
+//                    .foregroundStyle(.apillogBlackDescription)
             }
             
             Spacer()
