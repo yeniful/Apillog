@@ -63,59 +63,60 @@ struct NewTodayView: View {
                                     .aspectRatio(contentMode: .fit)
                                 .frame(width: 32, height: 32)}
                         }.padding(.horizontal, 16)
-               VStack(spacing: -10){
+                        VStack(spacing: -10){
                             ForEach(tempPillItems, id: \.self) { item in
-//                                TodayViewListRow(isLastRow: tempPillItems.last == item ? true : false)
+                                //                                    TodayViewListRow(isLastRow: tempPillItems.last == item ? true : false)}}
                             }
-                        }
+                            .padding(.horizontal, 16)
+                            
+                            // MARK: 전체 섭취 Button
+                            HStack{
+                                Spacer()
+                                Button(action: {
+                                    NSLog("test")
+                                }, label: {
+                                    ZStack{
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .frame(width: 171, height: 60)
+                                        Text("모두 섭취하기")
+                                            .foregroundStyle(.white)
+                                    }
+                                }).trackaButtonStyle()
+                                Spacer()}
+                            
+                            ListDivider()
+                                .padding(.top, 32)
+                            
+                            // MARK: SecondaryPill
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Text("추가기록").font(.title2.bold())
+                                    ForEach(tempPillItems, id: \.self) { item in
+                                        TodayViewListRow(medication: item, isLastRow: true)
+                                    }
+                                    Spacer()
+                                    // TODO: - SecondaryMedicationView로 수정
+                                    NavigationLink(destination: EmptyView()) {
+                                        Image("AddingMedicationButton")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                        .frame(width: 32, height: 32)}
+                                }
+                                //                                TodayViewListRow(medication: <#PrimaryMedication#>, isLastRow: true)}
+                                .padding([.horizontal, .top], 16)}}
+                        .accentColor(.primaryGreen)
                     }
-                    .padding(.horizontal, 16)
-                    
-                    // MARK: 전체 섭취 Button
-                    HStack{
-                        Spacer()
-                        Button(action: {
-                            NSLog("test")
-                        }, label: {
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 30)
-                                    .frame(width: 171, height: 60)
-                                Text("모두 섭취하기")
-                                    .foregroundStyle(.white)
-                            }
-                        }).trackaButtonStyle()
-                        Spacer()}
-                    
-                    ListDivider()
-                        .padding(.top, 32)
-                    
-                    // MARK: SecondaryPill
-                    VStack(alignment: .leading){
-                        HStack{
-                            Text("추가기록").font(.title2.bold())
-                            ForEach(tempPillItems, id: \.self) { item in
-                                TodayViewListRow(medication: item, isLastRow: true)
-                            }
-                            Spacer()
-                            // TODO: - SecondaryMedicationView로 수정
-                            NavigationLink(destination: EmptyView()) {
-                                Image("AddingMedicationButton")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                .frame(width: 32, height: 32)}}
-//                        Row(isLastRow: true)
-                    }
-                    .padding([.horizontal, .top], 16)}}
-            
-        } // NavigationStack
-        .accentColor(.primaryGreen)
+                }
+            }
+        }
     }
     
     // MARK: - Functions
-    private func updateTime() {
+    func updateTime() {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = "M월 d일 EEEE"
         currentDate = formatter.string(from: Date())
     }
+                
 }
