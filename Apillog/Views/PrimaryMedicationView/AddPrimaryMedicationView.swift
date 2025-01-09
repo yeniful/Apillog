@@ -38,7 +38,6 @@ struct AddPrimaryMedicationView: View {
                 }.pickerStyle(.segmented)
                     .onChange(of: medicationName) { oldName, newName in
                         isNameEditable = (medicationName != "콘서타" && medicationName != "메디키넷")
-                        print(oldName, newName)
                         if isNameEditable {
                             medicationName = newName
                         }

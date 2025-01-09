@@ -10,8 +10,12 @@ import SwiftUI
 struct PrimaryMedicationRow: View {
     
     @Environment(\.modelContext) private var modelContext
+<<<<<<< HEAD
     @State var isActive: Bool = false
+=======
+>>>>>>> d22120a (Feat: Categorized each PrimaryMedication based on partOfDay and display them in time section on the TodayView based on isActive)
     var medication: PrimaryMedication
+    @State var isActive: Bool
     
     var body: some View {
         HStack{
@@ -26,9 +30,12 @@ struct PrimaryMedicationRow: View {
             
             Spacer()
             
-            Toggle(isOn: $isActive, label: {
+            Toggle(isOn: $isActive, label:{
                 
-            })
+            }).onChange(of: isActive) { oldValue, newValue in
+                isActive = newValue
+                medication.isActive = newValue
+            }
         }
     }
 }
