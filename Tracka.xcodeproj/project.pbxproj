@@ -11,7 +11,6 @@
 		A86A36C02D2E6E8500388942 /* TrackaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36BA2D2E6E8500388942 /* TrackaUITests.swift */; };
 		A86A36DB2D2E6EC500388942 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86A36C82D2E6EC500388942 /* Preview Assets.xcassets */; };
 		A86A36DC2D2E6EC500388942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86A36D62D2E6EC500388942 /* Assets.xcassets */; };
-		A86A36DE2D2E6EC500388942 /* PrimaryMedication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36D72D2E6EC500388942 /* PrimaryMedication.swift */; };
 		A86A36E02D2E6EC500388942 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36CE2D2E6EC500388942 /* TodayView.swift */; };
 		A86A36E22D2E6EC500388942 /* TrackaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36D92D2E6EC500388942 /* TrackaApp.swift */; };
 		A86A36E32D2E6EC500388942 /* Button+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36C12D2E6EC500388942 /* Button+.swift */; };
@@ -27,6 +26,7 @@
 		A86A37172D2E88A200388942 /* Testing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A86A36EF2D2E737B00388942 /* Testing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A86A37192D2E8A3600388942 /* RowDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36C32D2E6EC500388942 /* RowDivider.swift */; };
 		A86A371A2D2E8A3D00388942 /* ListDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A36C22D2E6EC500388942 /* ListDivider.swift */; };
+		A86A371D2D32B0EE00388942 /* PrimaryMedication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A371B2D32B0EE00388942 /* PrimaryMedication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,10 +81,10 @@
 		A86A36D12D2E6EC500388942 /* NewTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodayView.swift; sourceTree = "<group>"; };
 		A86A36D22D2E6EC500388942 /* NewPrimaryMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPrimaryMedicationView.swift; sourceTree = "<group>"; };
 		A86A36D62D2E6EC500388942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A86A36D72D2E6EC500388942 /* PrimaryMedication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryMedication.swift; sourceTree = "<group>"; };
 		A86A36D82D2E6EC500388942 /* Tracka.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tracka.entitlements; sourceTree = "<group>"; };
 		A86A36D92D2E6EC500388942 /* TrackaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackaApp.swift; sourceTree = "<group>"; };
 		A86A36EF2D2E737B00388942 /* Testing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Testing.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/Testing.framework; sourceTree = DEVELOPER_DIR; };
+		A86A371B2D32B0EE00388942 /* PrimaryMedication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryMedication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,8 +215,8 @@
 				A86A36C92D2E6EC500388942 /* Preview Content */,
 				A86A36D52D2E6EC500388942 /* Views */,
 				A86A36D62D2E6EC500388942 /* Assets.xcassets */,
-				A86A36D72D2E6EC500388942 /* PrimaryMedication.swift */,
 				A86A36D82D2E6EC500388942 /* Tracka.entitlements */,
+				A86A371C2D32B0EE00388942 /* Model */,
 				A86A36D92D2E6EC500388942 /* TrackaApp.swift */,
 			);
 			path = Tracka;
@@ -228,6 +228,14 @@
 				A86A36EF2D2E737B00388942 /* Testing.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A86A371C2D32B0EE00388942 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A86A371B2D32B0EE00388942 /* PrimaryMedication.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A86A36DE2D2E6EC500388942 /* PrimaryMedication.swift in Sources */,
+				A86A371D2D32B0EE00388942 /* PrimaryMedication.swift in Sources */,
 				A86A36E02D2E6EC500388942 /* TodayView.swift in Sources */,
 				A86A36E22D2E6EC500388942 /* TrackaApp.swift in Sources */,
 				A86A37192D2E8A3600388942 /* RowDivider.swift in Sources */,

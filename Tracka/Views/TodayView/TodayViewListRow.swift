@@ -24,7 +24,7 @@ struct TodayViewListRow: View {
                 HStack(alignment: .center){
                     Image("PillGreen")
                     VStack(alignment: .leading){
-                        Text(medication.name + " " + "\(medication.strength)" + medication.unit)
+                        Text("\(medication.name) \(medication.strength)\(medication.unit)")
                             .font(.title3)
                             .foregroundColor(.descriptionBlack)
                         Text("아직 복용하지 않음")

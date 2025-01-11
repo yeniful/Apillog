@@ -38,6 +38,33 @@ struct TodayView: View {
         medication.cycle >= 4 && medication.isActive == true
     }) var dinnerMedications: [PrimaryMedication]
     
+    var tempPillItems = [
+        PrimaryMedication(
+            name: "콘서타",
+            strength: 36,
+            unit: "mg",
+            cycle: 3,
+            durationStartDate: Date(),
+            durationEndDate: Date()
+        ),
+        PrimaryMedication(
+            name: "메디키넷",
+            strength: 18,
+            unit: "mg",
+            cycle: 3,
+            durationStartDate: Date(),
+            durationEndDate: Date()
+        ),
+        PrimaryMedication(
+            name: "타이레놀",
+            strength: 1,
+            unit: "정",
+            cycle: 3,
+            durationStartDate: Date(),
+            durationEndDate: Date()
+        )
+    ]
+    
     // Header
     @State private var currentDate = ""
     // Segmented Picker
@@ -87,10 +114,11 @@ struct TodayView: View {
                                 .frame(width: 32, height: 32)}}
                         
                         VStack(spacing: -10){
-                            ForEach(medications , id: \.self) { medication in
-                                TodayViewListRow(medication: medication, isLastRow: medications.last == medication ? true : false)}}
-                        
-                    }.padding(.horizontal, 16)
+                            ForEach(tempPillItems, id: \.self) { item in
+                                TodayViewListRow(medication: item, isLastRow: /*item.name == tempPillItems.last ? true :*/ false)
+                            }}
+                    }
+                    .padding(.horizontal, 16)
                     
                     // MARK: 전체 섭취 Button
                     HStack{
@@ -102,8 +130,8 @@ struct TodayView: View {
                                 RoundedRectangle(cornerRadius: 30)
                                     .frame(width: 171, height: 60)
                                 Text("모두 섭취하기")
-                                    .foregroundStyle(.white)}})
-//                        .apillogButtonStyle()
+                                .foregroundStyle(.white)}})
+                        //                        .apillogButtonStyle()
                         Spacer()}
                     
                     ListDivider()
@@ -120,8 +148,13 @@ struct TodayView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                 .frame(width: 32, height: 32)}}
-                        // TODO: Secondary Medication List
-//                        TodayViewListRow(medication: <#T##PrimaryMedication#>, isLastRow: <#T##Bool#>)
+                        
+                        
+                        VStack(spacing: -10){
+                            ForEach(tempPillItems, id: \.self) { item in
+                                TodayViewListRow(medication: item, isLastRow: /*item.name == tempPillItems.last ? true :*/ false)
+                            }
+                        }
                     }
                     .padding([.horizontal, .top], 16)}}
             
@@ -142,9 +175,9 @@ struct TodayView: View {
         formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = "HH"
         guard let hour = Int(formatter.string(from: Date())) else {
-                return "Error"
+            return "Error"
         }
-        
+            
         switch hour {
         case 0..<12:
             return "아침"

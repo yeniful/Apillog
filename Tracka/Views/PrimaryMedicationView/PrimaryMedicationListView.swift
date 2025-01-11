@@ -32,9 +32,10 @@ struct PrimaryMedicationListView: View {
                 Button(action: {
                     selectedMedication = item
                 }, label: {
-                    PrimaryMedicationRow(medication: item, isActive: item.isActive)
-                })}
-            .onDelete(perform: deleteMedication)
+
+                    PrimaryMedicationRow(medication: item, isActive: true)
+                })
+            }
             .sheet(item: $selectedMedication) { item in
                 VStack {
                     Text(item.name)
@@ -78,5 +79,3 @@ struct PrimaryMedicationListView: View {
                 modelContext.delete(primaryMedications[index])}}
     }
 }
-
-

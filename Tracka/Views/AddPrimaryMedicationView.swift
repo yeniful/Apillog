@@ -64,19 +64,19 @@ struct AddPrimaryMedicationView: View {
                         NSLog("\(cycle)")
                     }
                     .buttonStyle(.borderedProminent)
-                    .accentColor(cycle % 2 != 0 ? .apillogGreen : .apillogGrayDeactivated)
+                    .accentColor(cycle % 2 != 0 ? .green : .gray)
                     Button("점심"){
                         cycle += (cycle == 0 ||  cycle == 1 ? 2 : -2)
                         NSLog("\(cycle)")
                     }
                     .buttonStyle(.borderedProminent)
-                    .accentColor(cycle == 2 || cycle == 3 || cycle == 6 || cycle == 7 ? .apillogGreen : .apillogGrayDeactivated)
+                    .accentColor(cycle == 2 || cycle == 3 || cycle == 6 || cycle == 7 ? .green : .gray)
                     Button("저녁"){
                         cycle +=  (cycle < 4 ? 4 : -4)
                         NSLog("\(cycle)")
                     }
                     .buttonStyle(.borderedProminent)
-                    .accentColor( cycle >= 4 ? .apillogGreen : .apillogGrayDeactivated)
+                    .accentColor( cycle >= 4 ? .green : .gray)
                 }
                 Spacer()
             }
@@ -86,7 +86,7 @@ struct AddPrimaryMedicationView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("취소") {
                         isPresented = false }
-                    .foregroundStyle(.apillogGreen)}
+                    .foregroundStyle(.green)}
 #endif
                 ToolbarItem {
                     Button("저장") {
@@ -98,7 +98,7 @@ struct AddPrimaryMedicationView: View {
                             durationEndDate: durationEndDate)
                         
                         isPresented = false }
-                    .foregroundStyle(.apillogGreen)}
+                    .foregroundStyle(.green)}
             }
         }.padding([.horizontal, .top], 16)
     }
